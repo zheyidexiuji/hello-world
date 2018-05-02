@@ -5,10 +5,10 @@ OUTPUT_NODE = 10
 LAYER1_NODE = 500
 
 def get_weigth(shape,regularizer):
-    w = tf.Variable(tf.truncated_normal(shape,stddev=0.1))
+    ww1 = tf.Variable(tf.truncated_normal(shape,stddev=0.1))
     if regularizer!= None:
         tf.add_to_collection("loss",tf.contrib.layers.l2_regularizer(regularizer)(w))
-    return w
+    return ww1
     
 def get_bais(shape):
     b = tf.Variable(tf.zeros(shape))
